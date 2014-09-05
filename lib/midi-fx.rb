@@ -25,6 +25,7 @@ module MIDIFX
     :filter => Filter,
     :high_pass_filter => HighPassFilter,
     :limit => Limit, 
+    :low_pass_filter => LowPassFilter,
     :notch_filter => NotchFilter,
     :transpose => Transpose
   }
