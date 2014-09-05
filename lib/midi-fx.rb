@@ -17,7 +17,7 @@ require "midi-fx/transpose"
 
 module MIDIFX
 
-  VERSION = "0.2"
+  VERSION = "0.3"
 
   MAP = {
     :band_pass_filter => BandPassFilter,
