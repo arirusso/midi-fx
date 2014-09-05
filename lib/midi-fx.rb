@@ -20,8 +20,12 @@ module MIDIFX
   VERSION = "0.1"
 
   MAP = {
+    :band_pass_filter => BandPassFilter,
+    :band_reject_filter => BandRejectFilter,
     :filter => Filter,
+    :high_pass_filter => HighPassFilter,
     :limit => Limit, 
+    :notch_filter => NotchFilter,
     :transpose => Transpose
   }
 
