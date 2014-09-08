@@ -3,7 +3,7 @@ module MIDIFX
   # Use the Filter superclass when you need a multi-band filter
   class Filter
 
-    attr_reader :bandwidth, :property, :reject
+    attr_reader :bandwidth, :name, :property, :reject
 
     def initialize(property, bandwidth, options = {})
       @bandwidth = [bandwidth].flatten

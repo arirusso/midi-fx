@@ -2,7 +2,7 @@ module MIDIFX
 
   class Limit
 
-    attr_reader :property, :limit_to
+    attr_reader :limit_to, :name, :property
     alias_method :range, :limit_to
 
     def initialize(property, limit_to, options = {})

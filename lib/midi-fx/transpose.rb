@@ -2,7 +2,7 @@ module MIDIFX
 
   class Transpose
 
-    attr_reader :factor, :property
+    attr_reader :factor, :name, :property
 
     def initialize(property, factor, options = {})
       @factor = factor
