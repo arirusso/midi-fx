@@ -5,7 +5,7 @@
 #
 # (c)2011-2014 Ari Russo
 # Apache 2.0 License
-# 
+#
 
 # libs
 require "midi-message"
@@ -17,14 +17,14 @@ require "midi-fx/transpose"
 
 module MIDIFX
 
-  VERSION = "0.4"
+  VERSION = "0.4.1"
 
   MAP = {
     :band_pass_filter => BandPassFilter,
     :band_reject_filter => BandRejectFilter,
     :filter => Filter,
     :high_pass_filter => HighPassFilter,
-    :limit => Limit, 
+    :limit => Limit,
     :low_pass_filter => LowPassFilter,
     :notch_filter => NotchFilter,
     :transpose => Transpose
