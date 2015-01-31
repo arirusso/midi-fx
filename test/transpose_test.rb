@@ -1,6 +1,6 @@
 require "helper"
 
-class MIDIFX::TransposeTest < Test::Unit::TestCase
+class MIDIFX::TransposeTest < Minitest::Test
 
   def test_transpose_note_up
     message = MIDIMessage::NoteOn["C4"].new(0, 100)

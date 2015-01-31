@@ -1,6 +1,6 @@
 require "helper"
 
-class MIDIFX::FilterTest < Test::Unit::TestCase
+class MIDIFX::FilterTest < Minitest::Test
 
   def test_high_pass_note_reject
     message = MIDIMessage::NoteOn["C0"].new(0, 100)
@@ -43,7 +43,7 @@ class MIDIFX::FilterTest < Test::Unit::TestCase
     output = MIDIFX::BandPassFilter.new(:note, (20..100)).process(message)
     assert_equal(message, output)
   end
-  
+
   def test_band_reject_note_reject
     message = MIDIMessage::NoteOn["C4"].new(0, 100)
     assert_equal(60, message.note)
@@ -57,7 +57,7 @@ class MIDIFX::FilterTest < Test::Unit::TestCase
     output = MIDIFX::NotchFilter.new(:note, (20..50)).process(message)
     assert_equal(message, output)
   end
-  
+
   def test_multiband_note_reject
     message = MIDIMessage::NoteOn["C4"].new(0, 100)
     assert_equal(60, message.note)
@@ -71,7 +71,7 @@ class MIDIFX::FilterTest < Test::Unit::TestCase
     output = MIDIFX::Filter.new(:note, [(20..30), (50..70)]).process(message)
     assert_equal(message, output)
   end
-  
+
   def test_multinotch_note_reject
     message = MIDIMessage::NoteOn["C4"].new(0, 100)
     assert_equal(60, message.note)
@@ -85,7 +85,7 @@ class MIDIFX::FilterTest < Test::Unit::TestCase
     output = MIDIFX::Filter.new(:note, [(20..30), (40..50)], :reject => true).process(message)
     assert_equal(message, output)
   end
-  
+
   def test_numeric_note_accept
     message1 = MIDIMessage::NoteOn["C4"].new(0, 100)
     message2 = MIDIMessage::NoteOn["C5"].new(0, 100)
@@ -95,7 +95,7 @@ class MIDIFX::FilterTest < Test::Unit::TestCase
     output = f.process(message2)
     assert_equal(nil, output)
   end
-  
+
   def test_numeric_note_reject
     message1 = MIDIMessage::NoteOn["C4"].new(0, 100)
     message2 = MIDIMessage::NoteOn["C5"].new(0, 100)
@@ -105,5 +105,5 @@ class MIDIFX::FilterTest < Test::Unit::TestCase
     output = f.process(message2)
     assert_equal(message2, output)
   end
-  
+
 end

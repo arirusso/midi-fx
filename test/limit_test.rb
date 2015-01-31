@@ -1,12 +1,12 @@
 require "helper"
 
-class MIDIFX::LimitTest < Test::Unit::TestCase
-  
+class MIDIFX::LimitTest < Minitest::Test
+
   def test_numeric_range
     message = MIDIMessage::NoteOn["C0"].new(0, 100)
     assert_equal(12, message.note)
     MIDIFX::Limit.new(:note, 30).process(message)
-    assert_equal(30, message.note)    
+    assert_equal(30, message.note)
   end
 
   def test_low_note
@@ -36,5 +36,5 @@ class MIDIFX::LimitTest < Test::Unit::TestCase
     MIDIFX::Limit.new(:velocity, (25..75)).process(message)
     assert_equal(75, message.velocity)
   end
-  
+
 end

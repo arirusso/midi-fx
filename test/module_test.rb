@@ -1,6 +1,6 @@
 require "helper"
 
-class MIDIFX::ModuleTest < Test::Unit::TestCase
+class MIDIFX::ModuleTest < Minitest::Test
 
   def test_class_method
     msg = MIDIMessage::NoteOn["C4"].new(0, 100)
